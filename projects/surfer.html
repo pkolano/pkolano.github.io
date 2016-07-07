@@ -1,0 +1,78 @@
+<html><head><title>Surfer</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/surfer.jpg" border="0"
+            height="120" alt="Surfer"></td>
+        <td></td><td></td><td></td>
+        <td><h1><center>
+        Selection and Ranking Framework for Extracting Resources
+        <br>(Surfer)</center></h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/surfer.jpg" border="0"
+            height="120" alt="Surfer"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>Surfer is an extensible framework designed to select and
+        rank grid resources where a resource is defined to be anything
+        that may need selecting such as compute resources, storage
+        resources, data resources, etc.  The user specifies the set of
+        resource types desired, the constraints that must hold over all
+        the resources, and the ranking function to be used to order the
+        resources.  For each request received, Surfer returns a set of
+        resource tuples where each tuple contains a resource instance
+        for each resource type requested, each tuple satisfies the
+        specified constraints, and tuples are ordered by descending
+        values of the given ranking function.</p>
+
+        <p>Constraints and ranking functions are boolean and numeric
+        expressions, respectively, utilizing a set of built-in
+        arithmetic, boolean, and relational operators, and a set of
+        functions supplied by information providers.  Information
+        providers are implemented independent of the framework and
+        integrated into the system using a single configuration line.
+        Providers supply functions of arbitrary type that represent
+        selected information such as the number of cpus of a compute
+        resource, free disk space of a storage resource, etc.  Providers
+        also supply queries used to generate resource sets that define
+        the set of resources selectable.  Information providers are
+        invisible to the end user, who only sees the set of resource
+        types selectable and the set of functions available.  The
+        framework worries about which provider is responsible for which
+        function, whether to use queries or function calls, how results
+        are correlated, etc.</p>
+
+        <p>Requests are processed in four stages.  First, the
+        composite constraint is rewritten to a set expression utilizing
+        the function calls and queries supplied by providers.  Next, the
+        set expression is evaluated to produce the set of resource
+        tuples meeting the constraints.  Third, the resource tuples are
+        ranked by the composite ranking function.  Finally, the
+        requested number of the highest ranked tuples are returned to
+        the user.  Once the user receives the resulting tuple set, they
+        can then extract the identifying attributes (e.g. host name,
+        queue type, and queue name for a compute resource) of each
+        resource returned so that they can then utilize those resources
+        using other services.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="http://ti.arc.nasa.gov/opensource/projects/surfer">
+                Surfer 1.0</a>
+        </li>
+    </ul>
+
+    <h2>Papers</h2><ul>
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/ccgrid04.pdf">
+                Surfer: An Extensible Pull-Based Framework for Resource
+                Selection and Ranking.
+            </a>
+            <i>4th IEEE/ACM Intl. Symp. on Cluster Computing and the Grid</i>, 
+            Chicago, IL, Apr. 2004, pp. 563-571.
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+

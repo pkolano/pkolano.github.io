@@ -1,0 +1,62 @@
+<html><head><title>Retools</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/wrench.jpg" border="0" height="75"
+            alt="Wrench"></td>
+        <td></td><td></td><td></td>
+        <td><h1><center>
+        Restriping Tools for Lustre
+        <br>(Retools)</center></h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/wrench.jpg" border="0" height="75"
+            alt="Wrench"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>Standard open source tools for file transfer, archival, and
+        compression do not typically take Lustre striping
+        characteristics into account.  Since striping cannot be changed
+        after a file is created, the files resulting from such
+        operations are often stuck with default striping, which can be
+        suboptimal for later access to those files.  A large default
+        stripe count can cause operations on small files to impact the
+        performance of the file system as a whole due to excess disk
+        activity.  A small default stripe count penalizes large files,
+        which will only be able to achieve a fraction of the performance
+        possible due to I/O bottlenecks.</p>
+
+        <p>Retools is a set of modifications to the commonly used open
+        source utilities bzip2, gzip, rsync, and tar that automatically
+        selects the Lustre stripe count for created and/or extracted
+        files according to the sizes of the files involved.  By striping
+        large files over a higher number of physical disks and small
+        files over a lower number, aggregate I/O bandwidth for large
+        files is maximized and the impact to the file system due to
+        small files is minimized.  These tools support the typical
+        workflow in high performance computing environments where users
+        compress large files and/or aggregate multiple small files
+        into a single archive during remote transfers.  Once
+        uncompressed/unarchived into their original form, these files
+        will be optimally striped for subsequent operations.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="http://sourceforge.net/projects/retools/files">
+                Retools 1.3</a>
+        </li>
+    </ul>
+
+    <h2>Papers</h2><ul>
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/hpdic13.pdf">
+                Transparent Optimization of Parallel File System
+                I/O via Standard System Tool Enhancement.
+            </a>
+            <i>2nd Intl. Wkshp. on High Performance Data Intensive Computing</i>,
+            Boston, MA, May 2013, pp. 1963-1970.
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+

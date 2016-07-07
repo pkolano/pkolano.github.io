@@ -1,0 +1,68 @@
+<html><head><title>Ballast</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/balanced_scale.jpg" border="0" height="100"
+            alt="Balanced scale"></td>
+        <td></td><td></td><td></td>
+        <td><h1><center>
+        Balancing Load Across Systems
+        <br>(Ballast)</center></h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/balanced_scale.jpg" border="0" height="100"
+            alt="Balanced scale"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>Ballast is a framework that was specifically designed for
+        SSH load balancing by taking advantage of the aliasing and
+        proxying capabilities available in most SSH clients.  Within a
+        traditional SSH bastion architecture, where internal resources
+        can only be accessed from the outside via a hardened bastion
+        system, Ballast is completely transparent to users and does not
+        require any external modifications.  Bastions and internal hosts
+        must have the Ballast client and a pipe-based TCP relay utility
+        such as netcat installed, which can be easily managed across
+        internal hosts by configuration management tools.</p>
+
+        <p>Ballast consists of a Ballast agent on each balanced host,
+        a Ballast server on one or more data servers, and a Ballast
+        client on each bastion and internal host from which the user
+        might access balanced hosts.  The Ballast agent periodically
+        collects system load information and sends it to the Ballast
+        server.  The server aggregates the load data received from all
+        agents and stores it in a suitable form for making balancing
+        decisions.  When the user invokes SSH to a host alias designated
+        for balancing, SSH triggers the Ballast client, which contacts
+        the server to resolve balancing aliases to actual balanced host
+        names.  The server consults its data and returns one or more
+        hosts, one of which the client connects to via netcat (or
+        equivalent), after which the login proceeds normally.</p>
+
+        <p>Unlike traditional load balancers, Ballast has the ability to
+        adjust its balancing strategy based on the invoking user.  By
+        tailoring system selections specifically to each individual
+        user, the utility to each user can be maximized instead of
+        choosing a system that may be best according to a common metric,
+        but not ideal for the user's needs.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="http://sourceforge.net/projects/ballast/files">
+                Ballast 1.8</a>
+        </li>
+    </ul>
+
+    <h2>Papers</h2><ul>
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/iscc10.pdf">
+                Dynamic Load Balancing of SSH Sessions Using
+                User-Specific Selection Policies.
+            </a>
+            <i>15th IEEE Symp. on Computers and Communications</i>,
+            Riccione, Italy, Jun. 2010, pp. 272-278.
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+

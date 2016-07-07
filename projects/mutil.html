@@ -1,0 +1,82 @@
+<html><head><title>Mutil</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/multitool.jpg" border="0" height="100"
+            alt="Multitool"></td>
+        <td></td><td></td><td></td>
+        <td><h1><center>
+        Multi-Threaded Multi-Node Utilities
+        <br>(Mutil)</center></h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/multitool.jpg" border="0" height="100"
+            alt="Multitool"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>Copies between local file systems are a daily activity.
+        Files are constantly being moved to locations accessible by
+        systems with different functions and/or storage limits, being
+        backed up and restored, or being moved due to upgraded and/or
+        replaced hardware.  Hence, maximizing the performance of copies
+        as well as checksums that ensure the integrity of copies is
+        desirable to minimize the turnaround time of user and
+        administrator activities.  Modern parallel file systems
+        provide very high performance for such operations using a
+        variety of techniques such as striping files across multiple
+        disks to increase aggregate I/O bandwidth and spreading disks
+        across multiple servers to increase aggregate interconnect
+        bandwidth.</p>
+
+        <p>To achieve peak performance from such systems, it is
+        typically necessary to utilize multiple concurrent
+        readers/writers from multiple systems to overcome various
+        single-system limitations such as number of processors and
+        network bandwidth.  The standard cp and md5sum tools of GNU
+        coreutils found on every modern Unix/Linux system, however,
+        utilize a single execution thread on a single CPU core of a
+        single system, hence cannot take full advantage of the increased
+        performance of clustered file systems.</p>
+
+        <p>Mutil provides mcp and msum, which are drop-in replacements
+        for cp and md5sum that utilize multiple types of parallelism to
+        achieve maximum copy and checksum performance on clustered file
+        systems.  Multi-threading is used to ensure that nodes are kept
+        as busy as possible.  Read/write parallelism allows individual
+        operations of a single copy to be overlapped using asynchronous
+        I/O.  Multi-node cooperation allows different nodes to take part
+        in the same copy/checksum.  Split file processing allows
+        multiple threads to operate concurrently on the same file.
+        Finally, hash trees allow inherently serial checksums to be
+        performed in parallel.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="http://sourceforge.net/projects/mutil/files">
+                Mutil 1.822.4</a>
+        </li>
+    </ul>
+
+    <h2>Papers</h2><ul>
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/hpdic13.pdf">
+                Transparent Optimization of Parallel File System
+                I/O via Standard System Tool Enhancement.
+            </a>
+            <i>2nd Intl. Wkshp. on High Performance Data Intensive Computing</i>,
+            Boston, MA, May 2013, pp. 1963-1970.
+        </li>
+
+        <li>
+            P.Z. Kolano and R.B. Ciotti.
+            <a href="../papers/lisa10.pdf">
+                High Performance Multi-Node File Copies and Checksums
+                for Clustered File Systems.
+            </a>
+            <i>24th USENIX Large Installation System Administration Conf.</i>,
+            San Jose, CA, Nov. 2010, pp. 15-28.
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+

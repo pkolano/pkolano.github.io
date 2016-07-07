@@ -1,0 +1,171 @@
+<html><head><title>ASTRAL</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/leo.gif" border="0" height="100"
+            alt="Constellation of Leo"></td>
+        <td></td><td></td><td></td>
+        <td><h1><center>
+        ASLAN-Based TRIO Assertion Language
+        <br>(ASTRAL)</center></h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/leo.gif" border="0" height="100"
+            alt="Constellation of Leo"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>ASTRAL is a formal specification language for real-time
+        systems in which a system is described as a collection of state
+        machine specifications, where each specification represents a
+        process type of which there may be multiple statically generated
+        instances. Each process instance in the system executes
+        concurrently and asynchronously with all the other process
+        instances.  Additionally, a global specification contains
+        declarations for types and constants that are shared among more
+        than one process type, as well as assumptions about the global
+        environment and critical requirements for the whole system.</p>
+
+        <p>An ASTRAL process specification consists of a sequence of
+        levels. Each level is an abstract data type view of the system
+        being specified. The first ("top level") view is a very abstract
+        model of what constitutes the process (types, constants,
+        variables), what the process does (state transitions), and the
+        critical requirements the process must meet (invariants and
+        schedules). Lower levels are increasingly more detailed with
+        the lowest level corresponding closely to high level code.</p>
+
+        <p>The process being specified is thought of as being in various
+        states, with one state differentiated from another by the values
+        of its state variables, which can be changed only by means of
+        state transitions. Transitions are described in terms of entry
+        and exit assertions by using an extension of first-order
+        predicate calculus.  Transition entry assertions describe the
+        constraints that state variables must satisfy in order for the
+        transition to fire, while exit assertions describe the
+        constraints that are fulfilled by state variables after the
+        transition has fired. An explicit non-null duration is
+        associated with each transition. Transitions are executed as
+        soon as they are enabled (i.e. when their entry assertions are
+        satisfied) assuming no other transition for that process
+        instance is executing.</p>
+
+        <p>Every process can export both state variables and
+        transitions; as a consequence, the former are readable by other
+        processes while the latter are executable from the external
+        environment. Processes communicate by broadcasting the values of
+        exported variables and the start and end times of exported
+        transitions.</p>
+
+        <p>In addition to specifying system state (through process
+        variables and constants) and system evolution (through
+        transitions), an ASTRAL specification also defines system
+        critical requirements and assumptions on the behavior of the
+        environment that interacts with the system. The behavior of the
+        environment is expressed by means of environment clauses, which
+        describe assumptions about the pattern of invocation of external
+        transitions. Critical requirements are expressed by means of
+        invariants and schedules. Invariants represent requirements that
+        must hold in every state reachable from the initial state, no
+        matter what the behavior of the external environment is, while
+        schedules represent additional properties that must be satisfied
+        provided that the external environment behaves as assumed.</p>
+
+        <p>The computational model for ASTRAL is based on
+        nondeterministic state machines and assumes maximal
+        parallelism, noninterruptable and nonoverlapping transitions
+        in a single process instance, and implicit one-to-many
+        (multi-cast) message passing communication.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="http://www.cs.ucsb.edu/~seclab/projects/astral/down.html">
+                ASTRAL 1.0</a>
+        </li>
+    </ul>
+
+    <h2>Papers</h2><ul>
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/pzk_dis.pdf">
+                Tools and Techniques for the Design and Systematic Analysis of Real-Time Systems.
+            </a>
+            Ph.D. Thesis, University of California,
+            Santa Barbara, Dec. 1999.
+        </li>
+
+        <li>
+            P.Z. Kolano, C.A. Furia, R.A. Kemmerer, D. Mandrioli.
+            <a href="../papers/arxiv10.pdf">
+                Refinement and Verification of Real-Time Systems.
+            </a>
+            <i>arXiv:1002.1796</i>,
+            Feb. 2010, pp. 1-59.
+        </li>
+ 
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/tcs02.pdf">
+                Proof Assistance for Real-Time Systems Using an
+                Interactive Theorem Prover.
+            </a>
+            <i>Theoretical Computer Science</i>,
+            volume 282, issue 1, 2002, pp. 53-99.
+        </li>
+
+        <li>
+            P.Z. Kolano and R.A. Kemmerer.
+            <a href="../papers/issta00.pdf">
+                Classification Schemes to Aid in the Analysis of Real-Time
+                Systems.
+            </a>
+            <i>ACM SIGSOFT Intl. Symp. on Software Testing and Analysis</i>,
+            Portland, OR, Aug. 2000, pp. 86-95.
+        </li>
+
+        <li>
+            P.Z. Kolano, R.A. Kemmerer, and D. Mandrioli.
+            <a href="../papers/fase00.pdf">
+                Parallel Refinement Mechanisms for Real-Time Systems.
+            </a>
+            <i>3rd Intl. Conf. on Fundamental Approaches to Software Engineering</i>,
+            Berlin, Germany, Mar. 2000, pp. 35-50.
+        </li>
+
+        <li>
+            P.Z. Kolano, Z. Dang, and R.A. Kemmerer.
+            <a href="../papers/ase99.pdf">
+                The Design and Analysis of Real-Time Systems Using the
+                ASTRAL Software Development Environment.
+        </a>
+        <i>Annals of Software Engineering</i>,
+        volume 7, 1999, pp. 177-210.
+        </li>
+
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/arts99.pdf">
+                Proof Assistance for Real-Time Systems Using an
+                Interactive Theorem Prover.
+            </a>
+            <i>5th Intl. AMAST Wkshp. on Formal Methods for Real-Time and Probabilistic Systems</i>,
+            Bamberg, Germany, May 1999, pp. 315-333.
+        </li>
+
+        <li>
+            R.A. Kemmerer and P.Z. Kolano.
+            <a href="../papers/icfem97.pdf">
+                Formally Specifying and Verifying Real-Time Systems.
+            </a>
+            <i>1st IEEE Intl. Conf. on Formal Engineering Methods</i>,
+            Hiroshima, Japan, Nov. 1997, pp. 112-120.
+        </li>
+    </ul>
+
+    <h2>Links</h2><ul>
+        <li>
+            <a href="http://www.cs.ucsb.edu/~seclab/projects/astral/index.html">
+                ASTRAL Home Page</a>
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+

@@ -1,0 +1,94 @@
+<html><head><title>Naturalization Service</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/ins.jpg" border="0" height="100"
+            alt="INS seal"></td>
+        <td></td><td></td><td></td>
+        <td><h1>Naturalization Service</h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/ins.jpg" border="0" height="100"
+            alt="INS seal"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>Naturalization is defined as the process of "adapting or
+        acclimating (a plant or animal) to a new environment;
+        introducing and establishing as if native".  The Naturalization
+        Service is a service for automatically naturalizing user
+        applications to grid resources.  The execution environment for
+        an application on a given resource consists of the software
+        existing on that resource and the settings of the environment
+        variables when the application runs.  For each execution
+        operation in a given job, the function of the Naturalization
+        Service is to:</p>
+        
+        <ul>
+            <li>Determine the software that the execution operation
+            application requires</li>
+
+            <li>Provide a location for that software on the execution
+        operation host by:
+            <ul>
+                <li>Determining if the software exists on the
+                execution operation host</li>
+
+                <li>Finding a source for any missing software</li>
+
+                <li>Copying missing software to the execution operation
+                host</li>
+            </ul>
+
+            <li>Set environment variables based on provided software
+            locations</li>
+        </ul>
+
+        <p>A list of dependencies is associated with each execution
+        operation.  A dependency consists of basic requirements
+        including a type, a name, a version range, and a feature list as
+        well as information gathered during processing including a
+        source host and path, a target path, and an "analyzed flag" to
+        indicate its analysis status.  The Naturalization Service
+        currently supports five software types: executables, shared
+        libraries, Java classes, and Perl and Python programs.  The
+        dependency name holds the canonical name for the software
+        depending on its type (e.g. ls, libc, java.util.List,
+        File::Basename, xml.sax.xmlreader, etc.).  The version range
+        consists of a minimum and/or maximum version required.  The
+        feature list contains features that the dependency must support.
+        For example, the application might require the w3m browser
+        compiled with SSL support.</p>
+
+        <p>The source host and path, target path, and analyzed flag
+        are used to store information as processing proceeds.  Stages
+        are only executed if the information they provide has not
+        already been gathered.  Thus, a job for which the execution
+        environment has already been fully established can be sent
+        through the Naturalization Service without effect.  This allows
+        the user to have complete control of job processing.  A user can
+        execute stages individually, can specify dependencies manually,
+        can turn analysis off, can specify an exact source for software,
+        can specify a location where software already exists, or any
+        combination thereof.  The Naturalization Service will fill in
+        any gaps in the environment left by the user or return the job
+        unchanged if no modifications are necessary.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="mailto:paul.kolano@nasa.gov">Email me</a>
+        </li>
+    </ul>
+
+    <h2>Papers</h2><ul>
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/dais03.pdf">
+                Facilitating the Portability of User Applications in Grid
+                Environments.
+            </a>
+            <i>4th IFIP Intl.  Conf. on Distributed Applications and Interoperable Systems</i>,
+            Paris, France, Nov. 2003, pp.73-85.
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+

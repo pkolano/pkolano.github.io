@@ -1,0 +1,81 @@
+<html><head><title>Shift</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/arrow.gif" border="0" height="75"
+            alt="Arrow"></td>
+        <td></td><td></td><td></td>
+        <td><h1><center>
+        Self-Healing Independent File Transfer
+        <br>(Shift)</center></h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/arrow.gif" border="0" height="75"
+            alt="Arrow"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>In high-end computing environments, remote file transfers of
+        very large data sets to and from computational resources are
+        commonplace as users are typically widely distributed across
+        different organizations and must transfer in data to be
+        processed and transfer out results for further analysis.  Local
+        transfers of this same data across file systems are also
+        frequently performed by administrators to optimize resource
+        utilization when new file systems come on-line or storage
+        becomes imbalanced between existing file systems.  In both
+        cases, files must traverse many components on their journey from
+        source to destination where there are numerous opportunities for
+        performance optimization as well as failure.  A number of
+        tools exist for providing reliable and/or high performance file
+        transfer capabilities, but most either do not support local
+        transfers, require specific security models and/or transport
+        applications, are difficult for individual users to deploy,
+        and/or are not fully optimized for highest performance.</p>
+
+        <p>Shift is a framework for Self-Healing Independent File
+        Transfer that provides high performance and resilience for
+        local and remote transfers through a variety of techniques.
+        These include end-to-end integrity via cryptographic hashes,
+        throttling of transfers to prevent resource exhaustion,
+        balancing transfers across resources based on load and
+        availability, and parallelization of transfers across multiple
+        source and destination hosts for increased redundancy and
+        performance.  In addition, Shift was specifically designed to
+        accommodate the diverse heterogeneous environments of a
+        widespread user base with minimal assumptions about operating
+        environments.  In particular, Shift is unique in its ability to
+        provide advanced reliability and automatic single and multi-file
+        parallelization to any stock command-line transfer application
+        while being easily deployed by both individual users as well as
+        entire organizations.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="http://sourceforge.net/projects/shiftc/files">
+                Shift 4.0</a>
+        </li>
+    </ul>
+
+    <h2>Papers</h2><ul>
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/hust15.pdf">
+                Automatically Encapsulating HPC Best Practices Into
+                Data Transfers.
+            </a>
+            <i>2nd Intl. Wkshp. on HPC User Support Tools</i>,
+            Austin, TX, Nov. 2015, pp. 1-12.
+        </li>
+
+        <li>
+            P.Z. Kolano.
+            <a href="../papers/resilience12.pdf">
+                High Performance Reliable File Transfers
+                Using Automatic Many-to-Many Parallelization.
+            </a>
+            <i>5th Wkshp. on Resiliency in High Performance Computing</i>,
+            Rhodes Island, Greece, Aug. 2012, pp. 463-473.
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+
