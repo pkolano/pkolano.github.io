@@ -47,6 +47,36 @@
         while being easily deployed by both individual users as well as
         entire organizations.</p>
 
+        <p>Shift includes the following features, among others:</p><ul>
+        <li>support for local, LAN, and WAN transfers</li>
+        <li>drop-in replacement for both cp and scp (basic options
+        only)</li>
+        <li>tracking of individual file operations with on-demand status</li>
+        <li>transfer stop and restart</li>
+        <li>email notification of completion, errors, and warnings</li>
+        <li>local and remote tar creation/extraction</li>
+        <li>rsync-like synchronization based on modification times and checksums</li>
+        <li>integrity verification of transfers with partial
+        retransfer/resum to rectify corruption</li>
+        <li>throttling based on local and remote resource utilization</li>
+        <li>automatic retrieval/release of files residing on DMF-managed file systems</li>
+        <li>automatic striping of files transferred to Lustre file systems</li>
+        <li>fully self-contained besides perl core and ssh</li>
+        <li>automatic detection and selection of higher performance
+        transports and hash utilities when available including bbcp,
+        bbftp, gridftp, mcp, msum, and rsync</li>
+        <li>automatic many-to-many parallelization of single and
+        multi-file transfers with file system equivalence detection and
+        rewriting</li>
+        </ul>
+
+        <p>Shift is in active production at the NASA Advanced
+        Supercomputing Facility (<a href="https://www.nas.nasa.gov/hecc/support/kb/entry/300"
+        >https://www.nas.nasa.gov/hecc/support/kb/entry/300</a>) and
+        has facilitated approximately 600k transfers over 1.32B files
+        totalling 88.5 PB (as of May 2018) since deployment in March
+        2012.</p>
+
     <h2>Download</h2><ul>
         <li>
             <a href="https://github.com/pkolano/shift">
