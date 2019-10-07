@@ -1,0 +1,56 @@
+<html><head><title>BASSHFS</title></head><body>
+    <center><table cellpadding="10"><tr>
+        <td><img src="../images/hammer_drive.png" border="0" height="100"
+            alt="Bent jail bars"></td>
+        <td></td><td></td><td></td>
+        <td><h1><center>
+        Bash-Accessible SSH File System
+        <br>(BASSHFS)</center></h1></td>
+        <td></td><td></td><td></td>
+        <td><img src="../images/hammer_drive.png" border="0" height="100"
+            alt="Bent jail bars"></td>
+    </tr></table></center>
+
+    <h2>Summary</h2>
+        <p>Working with remote systems over SSH is common in HPC
+        environments where the size of data sets makes them nontrivial
+        to relocate.  To run arbitrary commands on that data, a full SSH
+        session is required.  There are cases, however, when the user
+        may wish to perform simpler operations such as checking file
+        existence and size, viewing differences between configuration
+        files, creating directories, etc. that can be achieved with more
+        limited access.  Juggling multiple sessions to multiple hosts
+        may be inconvenient for such simple tasks.  BASSHFS is a tool
+        that allows users to perform such tasks within a single terminal
+        on a single host by transparently carrying out remote operations
+        as needed to present remote files as if they are locally mounted
+        when using the bash shell.</p>
+
+        <p>BASSHFS is similar to the existing SSHFS utility except it
+        is does not require FUSE kernel support.  Instead, BASSHFS uses
+        the aliasing and function mechanisms of the bash shell to
+        intercept program invocations and remap those that are supported
+        to its own versions.  These internal versions determine if files
+        on the command line are local or remote.  Remote files are
+        processed transparently using a persistent SSH connection to the
+        associated host(s).  Output associated with the local and remote
+        files is then multiplexed together into the standard unified
+        format associated with the original command.  To the user, it
+        appears as if all files reside on a local file system even
+        though they may span multiple files systems on multiple
+        hosts.</p>
+
+    <h2>Download</h2><ul>
+        <li>
+            <a href="https://github.com/pkolano/basshfs">
+                BASSHFS 1.0 (github)</a>
+        </li>
+        <li>
+            <a href="https://sourceforge.net/projects/basshfs/files">
+                BASSHFS 1.0 (sourceforge)</a>
+        </li>
+    </ul>
+    <br>
+    <a href="https://pkolano.github.io">Home</a>
+</body></html>
+
