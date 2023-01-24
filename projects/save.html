@@ -12,32 +12,27 @@
     </tr></table></center>
 
     <h2>Summary</h2>
+
         <p>Save is a framework for implementing highly available
-        network-accessible services.  Save consists of a command-line
-        utility and a small set of extensions for the existing Mon
-        monitoring utility.  Mon is a flexible command scheduler that has
-        the ability to take various actions (called "alerts") depending
-        on the exit conditions of the periodic commands (called
-        "monitors") it executes.  Save provides a set of monitors and
-        alerts that execute within the Mon scheduler. The core monitor
-        of Save provides heartbeat functionality so that passive servers
-        can detect if the active server is still available.  The core
-        alert of Save provides the ability to give and take the service
-        IP address using gratuitous ARP.</p>
+        network-accessible services.  Save sends and monitors SSH-based
+        heartbeats so that passive servers can detect if the active
+        server is still available.  A common sevice IPv4 and/or IPv6
+        address can be given and taken using gratuitous ARP (IPv4)
+        and/or unsolicited neighbor advertisement (IPv6).</p>
 
-        <p>In addition to the Mon extensions, the Save command-line
-        tool has a number of features.  This tool provides an interface
-        to control IP failover.  In particular, the administrator can
-        force the active node to yield the failover IP address, force
-        the backup node to take over the failover IP address, or label a
-        node as down so that it will not attempt to take over the
-        failover IP address under any condition.</p>
+        <p>In addition to heartbeat/failover functionality, the Save
+        command-line tool has a number of features.  This tool provides
+        an interface to control IP failover.  In particular, the
+        administrator can force the active node to yield the failover IP
+        address, force the backup node to take over the failover IP
+        address, or label a node as down so that it will not attempt to
+        take over the failover IP address under any condition.</p>
 
-        <p>The command-line tool also controls the validation,
-        archival, and synchronization features of Save.  Validation is
-        used to make sure that a configuration file conforms to some
-        specified characteristics such as format before it is installed
-        on other nodes.  Archival is used to save a copy of the previous
+        <p>The command-line tool also controls the validation, archival,
+        and synchronization features of Save.  Validation is used to
+        make sure that a configuration file conforms to some specified
+        characteristics such as format before it is installed on other
+        nodes.  Archival is used to save a copy of the previous
         configuration if, for some reason, the new configuration results
         in errant behavior.  Finally, synchronization features can be
         used to keep files consistent between the active and passive
@@ -50,7 +45,7 @@
         to any command and the appropriate actions will be taken if they
         are applicable.  In this way, administrators can simply perform
         their normal tasks, such as editing files (e.g. "save vi
-        /etc/config/file"), and Save will take care of checking
+        /etc/config/ file"), and Save will take care of checking
         validity, backing up old versions, and synchronizing files
         across systems if required.  For files for which there are no
         specific actions defined within the Save configuration, the
